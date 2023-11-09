@@ -14,7 +14,8 @@ const getStocksToWatch = async () => {
     const h2Tag = document.querySelector("#root h2"); // Target the <h2> tag in your HTML
 
     if (aTag) {
-      h2Tag.textContent = aTag.outerHTML; // Update the <h2> content with the <a> tag's text
+      // remove the word stocks to watch from the anchor tag
+      h2Tag.textContent = aTag.textContent.replace("Stocks to Watch:", "");
     } else {
       h2Tag.textContent = "Anchor tag not found."; // Update <h2> if the anchor tag is not found
     }
